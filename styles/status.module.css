@@ -1,0 +1,30 @@
+.page{
+    background: #ffffff;
+    min-height: calc(100vh - 138px);
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.attributesContainer {
+    background-color:  rgb(69, 143, 204);
+    width: 200px;
+    margin: auto 10px;
+}
+
+.attributesRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.attributesColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attributeInfo {
+    padding: 1px 10px;
+}

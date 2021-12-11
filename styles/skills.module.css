@@ -1,0 +1,83 @@
+.page{
+    background: #ffffff;
+    min-height: calc(100vh - 138px);
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.skillList {
+    display: flex;
+    flex-direction: column;
+}
+
+.skillBox {
+    border: 0.7px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    max-width: 50%;
+    min-width: 30%;
+    max-height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.skillBox:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.skillTitle {
+    padding-left: 20px;
+}
+
+.descriptionBox {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(240, 237, 196);
+    margin-bottom: 0px;
+}
+
+.descriptionContainer {
+    width: 500px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.skillStatus {
+    display: flex;
+    flex-direction: row;
+}
+
+.skillLevel {
+    margin-right: 50px;
+    margin-left: auto;
+}
+
+.skillNextEXP {
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.instruction {
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+.stopWatchContainer {
+    background-color: #e2eaf0;
+    padding-bottom: 10px;
+    border-top: 1px solid rgb(0, 0, 0);
+}
+
+.button {
+    margin-left: 10px;
+    cursor: pointer;
+}
