@@ -5,7 +5,7 @@ const Skill = new Schema({
     name: String,
     description: String,
     affectedAttributes: Array,
-    milestones: Array
+    milestones: Array,
 })
 
 module.exports = mongoose.model('Skill', Skill);
