@@ -4,10 +4,11 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const connectDB = require('./db');
 const bodyParser = require('body-parser');
-//const user = require('./routes/api/user');
+const user = require('./routes/api/user');
 //const status = require('./routes/api/status');
 //const level = require('./routes/api/level');
 //const skill = require('./routes/api/skill');
+//const attribute = require('./routes/api/attributes)
 
 const app = express();
 const port = 5001;
@@ -27,7 +28,7 @@ app.use(helmet());
 
 connectDB();
 
-//app.use('/api/v1/user', user);
+app.use('/api/v1/user', user);
 //app.use('/api/v1/status', status);
 //app.use('/api/v1/level', level);
 //app.use('api/v1/skill', skill);
