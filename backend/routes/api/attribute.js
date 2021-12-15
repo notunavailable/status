@@ -20,7 +20,6 @@ router.post("/create", async (req, res) => {
 });
 
 //Get attribute by ID
-//Get User
 router.get("/get/:id", async (req, res) => {
     const attribute = await Attribute.findOne({id: req.params.id});
     console.log(attribute);
@@ -32,6 +31,27 @@ router.get("/get/:id", async (req, res) => {
     else{
         return res.status(200).send(attribute);
     }
+});
+
+//Edit attribute by id
+router.put('/edit/:id', async (req, res) => {
+    
+    var query = {id: req.body.id};
+
+    User.findOneAndUpdate(query, {
+        email: req.body.email,
+        username: req.body.username,
+        status: req.body.status
+    }).then(user => {
+        if (!user) {
+            res.status(404).send({
+                message: 'User not found. cannot update!'
+            })
+        } else {
+            res.status(200).send(user);
+        }
+    })
+    .catch(err => res.status(400).json(err));
 });
 
 //Delete Attribute by id

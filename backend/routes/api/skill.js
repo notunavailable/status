@@ -33,6 +33,39 @@ router.get("/get/:id", async (req, res) => {
     }
 });
 
+//Get all skills
+router.get('/get/all', async (req, res) => {
+
+    const skills = await Skill.find();
+
+    if (skills.length == 0){
+        return res.status(404).send({message: 'No skills found'})
+    } else {
+        return res.status(201).send(skills);
+    }
+})
+
+//Edit skill by id
+router.put('/edit/:id', async (req, res) => {
+    
+    var query = {id: req.body.id};
+
+    User.findOneAndUpdate(query, {
+        email: req.body.email,
+        username: req.body.username,
+        status: req.body.status
+    }).then(user => {
+        if (!user) {
+            res.status(404).send({
+                message: 'User not found. cannot update!'
+            })
+        } else {
+            res.status(200).send(user);
+        }
+    })
+    .catch(err => res.status(400).json(err));
+});
+
 //Delete skill by id
 router.delete('/delete/:id', async (req, res) => {
     

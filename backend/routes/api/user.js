@@ -33,10 +33,10 @@ router.get("/get/:email", async (req, res) => {
     }
 });
 
-//Edit user details - not finished yet
-router.put('/edit/:email', async (req, res) => {
+//Edit user by id
+router.put('/edit/:id', async (req, res) => {
     
-    var query = {email: req.body.email};
+    var query = {id: req.body.id};
 
     User.findOneAndUpdate(query, {
         email: req.body.email,
@@ -54,10 +54,10 @@ router.put('/edit/:email', async (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
-//Delete User
-router.delete('/delete/:email', async (req, res) => {
+//Delete User by id
+router.delete('/delete/:id', async (req, res) => {
     
-    var query = {email: req.body.email};
+    var query = {id: req.body.id};
 
     User.findOne(query).then(user => {
         if (!user) {
