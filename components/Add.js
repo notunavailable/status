@@ -1,23 +1,8 @@
-import React, { useEffect } from 'react';
-import styles from '../styles/search.module.css';
+import React from 'react';
+import styles from '../styles/add.module.css';
 
-const Search = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter }) => {
-
-    useEffect(() => {
-            if (terms[i] === "") {
-                setOnEnter([...onEnter.slice(0, i), false, ...onEnter.slice(i + 1)]);
-            } else {
-                setOnEnter([...onEnter.slice(0, i), true, ...onEnter.slice(i+1)]);
-            }
-            //add search function to backend
-        /*const timeoutId = setTimeout(() => {
-            if (terms[i] === "") {
-                endSearch();
-            }
-        }, 500)*/
-    }, [terms[i]])
-
-    return (
+const Add = () => {
+    return(
         <div>
             <label>
                 <input
@@ -38,4 +23,4 @@ const Search = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter }) => {
     );
 }
 
-export default Search;
+export default Add;

@@ -3,6 +3,20 @@
     min-height: calc(100vh - 138px);
 }
 
+.search {
+    margin-right: 20px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.add {
+    margin-left: 20px;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 .title {
     font-weight: bold;
     text-align: center;

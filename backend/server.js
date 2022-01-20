@@ -5,10 +5,10 @@ const mongoose = require('mongoose');
 const connectDB = require('./db');
 const bodyParser = require('body-parser');
 const user = require('./routes/api/user');
-//const status = require('./routes/api/status');
-//const level = require('./routes/api/level');
-//const skill = require('./routes/api/skill');
-//const attribute = require('./routes/api/attributes)
+const level = require('./routes/api/level');
+const skill = require('./routes/api/skill');
+const attribute = require('./routes/api/attributes');
+const levelProgression = require('./routes/api/levelProgression');
 
 const app = express();
 const port = 5001;
@@ -29,8 +29,8 @@ app.use(helmet());
 connectDB();
 
 app.use('/api/v1/user', user);
-//app.use('/api/v1/status', status);
-//app.use('/api/v1/level', level);
-//app.use('api/v1/skill', skill);
+app.use('/api/v1/level', level);
+app.use('/api/v1/skill', skill);
+app.use('/api/v1/levelProgression', levelProgression)
 
 app.listen(port, () => console.log(`API Server listening on port ${port}`))

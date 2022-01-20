@@ -5,7 +5,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 //create new attribute
 router.post("/create", async (req, res) => {
-    const attribute = await Attribute.findOne({name: req.body.name});
+    const attribute = await Attribute.findOne({ name: req.body.name });
 
     if (attribute) {
         return res.status(400).send({
@@ -21,43 +21,43 @@ router.post("/create", async (req, res) => {
 
 //Get attribute by ID
 router.get("/get/:id", async (req, res) => {
-    const attribute = await Attribute.findOne({id: req.params.id});
+    const attribute = await Attribute.findOne({ id: req.params.id });
     console.log(attribute);
     if (!attribute) {
         res.status(400).send({
             message: "You sent an invalid id."
         })
     }
-    else{
+    else {
         return res.status(200).send(attribute);
     }
 });
 
 //Edit attribute by id
 router.put('/edit/:id', async (req, res) => {
-    
-    var query = {id: req.body.id};
 
-    User.findOneAndUpdate(query, {
-        email: req.body.email,
-        username: req.body.username,
-        status: req.body.status
-    }).then(user => {
-        if (!user) {
+    var query = { id: req.body.id };
+
+    Attribute.findOneAndUpdate(query, {
+        name: req.body.name,
+        description: req.body.description,
+        milestones: req.body.description
+    }).then(attribute => {
+        if (!attribute) {
             res.status(404).send({
-                message: 'User not found. cannot update!'
+                message: 'Attribute not found. cannot update!'
             })
         } else {
-            res.status(200).send(user);
+            res.status(200).send(attribute);
         }
     })
-    .catch(err => res.status(400).json(err));
+        .catch(err => res.status(400).json(err));
 });
 
 //Delete Attribute by id
 router.delete('/delete/:id', async (req, res) => {
-    
-    var query = {id: req.body.id};
+
+    var query = { id: req.body.id };
 
     Attribute.findOne(query).then(attribute => {
         if (!attribute) {
@@ -65,10 +65,11 @@ router.delete('/delete/:id', async (req, res) => {
                 message: 'Attribute not found, cannot delete!'
             })
         } else {
-        attribute.remove().then(() => res.status(200).send({
-            message: 'Deleted attribute with the name: ' + req.body.name
-        }))
-    }}).catch(err => res.status(400).json(err));
+            attribute.remove().then(() => res.status(200).send({
+                message: 'Deleted attribute with the name: ' + req.body.name
+            }))
+        }
+    }).catch(err => res.status(400).json(err));
 })
 
 

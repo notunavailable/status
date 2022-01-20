@@ -7,7 +7,7 @@ var ObjectId = require('mongodb').ObjectID;
 router.post("/create", async (req, res) => {
     const level = await Level.findOne({id: req.body.id});
 
-    if (user) {
+    if (level) {
         return res.status(400).send({
             message: "The level already exists"
         })

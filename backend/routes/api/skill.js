@@ -5,7 +5,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 //create new skill
 router.post("/create", async (req, res) => {
-    const skill = await Skill.findOne({name: req.body.name});
+    const skill = await Skill.findOne({ name: req.body.name });
 
     if (skill) {
         return res.status(400).send({
@@ -21,14 +21,14 @@ router.post("/create", async (req, res) => {
 
 //Get skill by ID
 router.get("/get/:id", async (req, res) => {
-    const skill = await Skill.findOne({id: req.params.id});
+    const skill = await Skill.findOne({ id: req.params.id });
     console.log(skill);
     if (!skill) {
         res.status(400).send({
             message: "You sent an invalid id."
         })
     }
-    else{
+    else {
         return res.status(200).send(skill);
     }
 });
@@ -38,8 +38,8 @@ router.get('/get/all', async (req, res) => {
 
     const skills = await Skill.find();
 
-    if (skills.length == 0){
-        return res.status(404).send({message: 'No skills found'})
+    if (skills.length == 0) {
+        return res.status(404).send({ message: 'No skills found' })
     } else {
         return res.status(201).send(skills);
     }
@@ -47,29 +47,30 @@ router.get('/get/all', async (req, res) => {
 
 //Edit skill by id
 router.put('/edit/:id', async (req, res) => {
-    
-    var query = {id: req.body.id};
 
-    User.findOneAndUpdate(query, {
-        email: req.body.email,
-        username: req.body.username,
-        status: req.body.status
-    }).then(user => {
-        if (!user) {
+    var query = { id: req.body.id };
+
+    Skill.findOneAndUpdate(query, {
+        name: req.body.name,
+        description: req.body.description,
+        affectedAttributes: req.body.description,
+        milestones: req.body.description
+    }).then(skill => {
+        if (!skill) {
             res.status(404).send({
-                message: 'User not found. cannot update!'
+                message: 'Skill not found. cannot update!'
             })
         } else {
-            res.status(200).send(user);
+            res.status(200).send(skill);
         }
     })
-    .catch(err => res.status(400).json(err));
+        .catch(err => res.status(400).json(err));
 });
 
 //Delete skill by id
 router.delete('/delete/:id', async (req, res) => {
-    
-    var query = {id: req.body.id};
+
+    var query = { id: req.body.id };
 
     Skill.findOne(query).then(skill => {
         if (!skill) {
@@ -77,10 +78,11 @@ router.delete('/delete/:id', async (req, res) => {
                 message: 'Skill not found, cannot delete!'
             })
         } else {
-        skill.remove().then(() => res.status(200).send({
-            message: 'Deleted skill with the name: ' + req.body.name
-        }))
-    }}).catch(err => res.status(400).json(err));
+            skill.remove().then(() => res.status(200).send({
+                message: 'Deleted skill with the name: ' + req.body.name
+            }))
+        }
+    }).catch(err => res.status(400).json(err));
 })
 
 module.exports = router;
