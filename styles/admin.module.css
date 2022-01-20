@@ -1,0 +1,15 @@
+.page{
+    background: #ffffff;
+    min-height: calc(100vh - 138px);
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+}
+

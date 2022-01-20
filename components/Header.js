@@ -17,6 +17,9 @@ const Header = () => {
             <Link href = "http://localhost:3000">
                 <h3 className = {styles.titles}>Home</h3>
             </Link>
+            <Link href = "http://localhost:3000/Admin">
+                <h3 className = {styles.titles}>Admin</h3>
+            </Link>
         </div>
     )
 }
