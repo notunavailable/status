@@ -1,0 +1,22 @@
+.popupBox {
+    position: absolute;
+    background-color:rgb(239, 241, 227);
+    border-width: 2px;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+}
+
+.exit{
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.exit:hover{
+    cursor: pointer;
+}
+
+.firstRow {
+    display: flex;
+    flex-direction: row;
+}

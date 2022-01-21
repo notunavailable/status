@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/search.module.css';
 
-const Search = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter }) => {
+const SearchAdd = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter, isSearch }) => {
 
     useEffect(() => {
             if (terms[i] === "") {
                 setOnEnter([...onEnter.slice(0, i), false, ...onEnter.slice(i + 1)]);
-            } else {
+            } else if (isSearch){
                 setOnEnter([...onEnter.slice(0, i), true, ...onEnter.slice(i+1)]);
             }
             //add search function to backend
@@ -26,16 +26,15 @@ const Search = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter }) => {
                     className={styles.input}
                     value={terms[i]}
                     onChange={e => setTerms([...terms.slice(0, i), e.target.value, ...terms.slice(i + 1)])}
-                    /*onKeyPress={e => {
-                        if (e.key === 'Enter') {
+                    onKeyPress={e => {
+                        if (e.key === 'Enter' && !isSearch) {
                             setOnEnter([...onEnter.slice(0, i), true, ...onEnter.slice(i + 1)]);
-                            console.log(onEnter);
                         }
-                    }}*/
+                    }}
                 />
             </label>
         </div>
     );
 }
 
-export default Search;
+export default SearchAdd;

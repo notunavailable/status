@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import styles from '../styles/admin.module.css';
-import Search from '../components/Search';
+import SearchAdd from '../components/SearchAdd';
 import SearchResults from '../components/SearchResults';
+import Add from '../components/Add';
 import {GET_ALL_SKILLS, GET_ALL_ATTRIBUTES, GET_ALL_LEVELS} from '../utils/api-defs';
 
 /*export async function getServerSideProps(context) {
@@ -19,8 +20,8 @@ import {GET_ALL_SKILLS, GET_ALL_ATTRIBUTES, GET_ALL_LEVELS} from '../utils/api-d
 
 
 const Admin = (/*{skills, attributes}*/) => {
-    const [searchTerms, setSearchTerms] = useState(['', '']);
-    const [onEnter, setOnEnter] = useState([false, false])
+    const [terms, setTerms] = useState(['', '', '', '']);
+    const [onEnter, setOnEnter] = useState([false, false, false, false])
 
     const skills = [
         {name: "drawing"},
@@ -50,18 +51,16 @@ const Admin = (/*{skills, attributes}*/) => {
                 <h1 className={styles.title}>Admin</h1>
                 <div className={styles.controls}>
                     <div className={styles.search}>
-                        <Search terms = {searchTerms} setTerms = {setSearchTerms} searchItem = "skills" i = {0} onEnter = {onEnter} setOnEnter = {setOnEnter}/>
-                        {onEnter[0] ? <SearchResults Alldata = {skills} term = {searchTerms[0]}/> : null}
-                        <Search terms = {searchTerms} setSearchTerms = {setSearchTerms} searchItem = "attributes" i = {1} onEnter = {onEnter} setOnEnter = {setOnEnter}/>
-                        {onEnter[1] ? <SearchResults Alldata = {attributes} term = {searchTerms[1]}/> : null}
+                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "skills" i = {0} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {true}/>
+                        {onEnter[0] ? <SearchResults Alldata = {skills} term = {terms[0]}/> : null}
+                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "attributes" i = {1} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {true}/>
+                        {onEnter[1] ? <SearchResults Alldata = {attributes} term = {terms[1]}/> : null}
                     </div>
                     <div className={styles.add}>
-                    <label htmlFor="addingSkills">
-                            <input type="text" placeholder="add skill name" className = {styles.input}/>
-                        </label>
-                        <label htmlFor="addingAttributes">
-                            <input type="text" placeholder="add attribute name" className = {styles.input}/>
-                        </label>
+                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "skills" i = {2} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
+                        {onEnter[2] ? <Add terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {2}/> : null}
+                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "attributes" i = {3} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
+                        {onEnter[3] ? <Add terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {3}/> : null}
                     </div>
                 </div>
 
