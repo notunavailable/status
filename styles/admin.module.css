@@ -1,6 +1,7 @@
 .page{
     background: #ffffff;
     min-height: calc(100vh - 138px);
+    position: relative;
 }
 
 .search {

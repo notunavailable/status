@@ -3,12 +3,14 @@
     background-color:rgb(239, 241, 227);
     border-width: 2px;
     border-radius: 5px;
-    width: 200px;
-    height: 200px;
+    min-height: 400px;
+    top: 30%;
+    left: 40%;
 }
 
 .exit{
     margin-left: 30px;
+    margin-right: 10px;
     margin-top: 5px;
 }
 
@@ -19,4 +21,75 @@
 .firstRow {
     display: flex;
     flex-direction: row;
+}
+
+.input {
+    height:20px;
+    width: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.description {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.affectedAttributesButton {
+    height: 20px;
+    width: 170px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color:rgb(220, 223, 208);
+}
+
+.affectedAttributesButton:hover{
+    cursor:pointer;
+}
+
+.text{
+    margin: 0px;
+}
+
+.dropdown{
+    height: 20px;
+    width: 150px;
+    margin-top: 0px;
+    margin-left: 10px;
+    border: solid black;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: .5px;
+    border-bottom-width: .5px;
+    border-radius: 5px;
+}
+
+.dropdown:hover{
+    cursor: pointer;
+    background-color:rgb(220, 223, 208);
+}
+
+.affectedAttribute{
+    height: 20px;
+    width: 150px;
+    margin-top: 5px;
+    margin-left: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.deleteAffectedAttribute{
+    text-align: right;
+    margin-right: 5px;
+}
+
+.deleteAffectedAttribute:hover{
+    cursor:pointer;
 }

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from '../styles/admin.module.css';
 import SearchAdd from '../components/SearchAdd';
 import SearchResults from '../components/SearchResults';
-import Add from '../components/Add';
+import AddSkill from '../components/AddSkill';
 import {GET_ALL_SKILLS, GET_ALL_ATTRIBUTES, GET_ALL_LEVELS} from '../utils/api-defs';
 
 /*export async function getServerSideProps(context) {
@@ -58,7 +58,7 @@ const Admin = (/*{skills, attributes}*/) => {
                     </div>
                     <div className={styles.add}>
                         <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "skills" i = {2} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
-                        {onEnter[2] ? <Add terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {2}/> : null}
+                        {onEnter[2] ? <AddSkill terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {2} attributes = {attributes}/> : null}
                         <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "attributes" i = {3} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
                         {onEnter[3] ? <Add terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {3}/> : null}
                     </div>
