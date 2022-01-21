@@ -6,6 +6,39 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
     const [description, setDescription] = useState("");
     const [affectedAttributes, setAffectedAttributes] = useState([]);
     const [dropdownIsDropped, setDropdownIsDropped] = useState(false);
+    const [milestones, setMilestones] = useState([{ name: "", level: 0, description: "" }, { name: "", level: 0, description: "" }]);
+
+    const renderMilestoneSetter = milestones.map((milestone, i) => {
+        return (
+            <div key={i} className={styles.milestoneSetter}>
+                <input
+                    type="text"
+                    placeholder="milestone name"
+                    className={styles.input}
+                    value={milestone.name}
+                    onChange={e => setMilestones([...milestones.slice(0, i), { name: e.target.value, level: milestone.level, description: milestone.description }, ...milestones.slice(i + 1)])}
+                />
+                <input
+                    type="text"
+                    placeholder="level"
+                    className={styles.input}
+                    value={milestone.level}
+                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: e.target.value, description: milestone.description }, ...milestones.slice(i + 1)])}
+                />
+                <div className = {styles.deleteMilestone} onClick = {() => {setMilestones([...milestones.slice(0, i), ...milestones.slice(i+1)])}}>
+                    <h2 className = {styles.text}>delete</h2>
+                </div>
+                <textarea
+                    type="text"
+                    placeholder="description"
+                    className={styles.input}
+                    value={milestone.level}
+                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: e.target.value }, ...milestones.slice(i + 1)])}
+                />
+            </div>
+
+        );
+    })
 
     const renderDropdown = attributes.map((attribute, i) => {
         for (let i = 0; i <= affectedAttributes.length; i++) {
@@ -25,7 +58,7 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
         return (
             <div key={i} className={styles.affectedAttribute}>
                 <h2 className={styles.text}>{attribute.name}</h2>
-                <div className = {styles.deleteAffectedAttribute} onClick={() => { setAffectedAttributes([...affectedAttributes.slice(0, indexInArray), ...affectedAttributes.slice(indexInArray + 1)]) }}>
+                <div className={styles.deleteAffectedAttribute} onClick={() => { setAffectedAttributes([...affectedAttributes.slice(0, indexInArray), ...affectedAttributes.slice(indexInArray + 1)]) }}>
                     <h2 className={styles.text}>X</h2>
                 </div>
             </div >
@@ -58,6 +91,10 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
                 value={description}
                 onChange={e => setDescription(e.target.value)}
             />
+            {renderMilestoneSetter}
+            <div className={styles.addMilestone} onClick={() => { setMilestones([...milestones, { name: "", level: 0 }]) }}>
+                <h2 className = {styles.text}>Add another milestone</h2>
+            </div>
             <div className={styles.affectedAttributesButton} onClick={() => { setDropdownIsDropped(!dropdownIsDropped) }}>
                 <h2 className={styles.text}>Select affected attributes</h2>
             </div>

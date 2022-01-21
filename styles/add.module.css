@@ -46,11 +46,11 @@
     margin-left: 10px;
     border: 1px solid black;
     border-radius: 5px;
-    background-color:rgb(220, 223, 208);
 }
 
 .affectedAttributesButton:hover{
     cursor:pointer;
+    background-color:rgb(220, 223, 208);
 }
 
 .text{
@@ -96,4 +96,35 @@
 
 .deleteAffectedAttribute:hover{
     cursor:pointer;
+}
+
+.addMilestone{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    width:fit-content;
+    height:fit-content;
+}
+
+.addMilestone:hover{
+    cursor: pointer;
+}
+
+.deleteMilestone{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 5px;
+    height: fit-content;
+    width: fit-content;
+}
+
+.deleteMilestone:hover{
+    cursor: pointer;
+}
+
+.milestoneSetter {
+    display: flex;
+    flex-direction: row;
 }

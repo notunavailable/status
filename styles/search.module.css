@@ -9,7 +9,7 @@
 
 .resultsBox{
     height: auto;
-    border-width: 0.5px;
+    border: 0.5px solid black;
     border-radius: 1px;
     margin-top: 0px;
     margin-bottom: 0px;

@@ -53,8 +53,8 @@ router.put('/edit/:id', async (req, res) => {
     Skill.findOneAndUpdate(query, {
         name: req.body.name,
         description: req.body.description,
-        affectedAttributes: req.body.description,
-        milestones: req.body.description
+        affectedAttributes: req.body.affectedAttributes,
+        milestones: req.body.milestones
     }).then(skill => {
         if (!skill) {
             res.status(404).send({
