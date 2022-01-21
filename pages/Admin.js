@@ -57,12 +57,12 @@ const Admin = (/*{skills, attributes}*/) => {
                         {onEnter[1] ? <SearchResults Alldata = {attributes} term = {terms[1]}/> : null}
                     </div>
                     <div className={styles.add}>
-                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "skills" i = {2} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
-                        {onEnter[2] ? <AddSkill terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {2} attributes = {attributes}/> : null}
-                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "attributes" i = {3} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
+                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "skill" i = {2} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
+                        <SearchAdd terms = {terms} setTerms = {setTerms} searchItem = "attribute" i = {3} onEnter = {onEnter} setOnEnter = {setOnEnter} isSearch = {false}/>
                         {onEnter[3] ? <Add terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {3}/> : null}
                     </div>
                 </div>
+                {onEnter[2] ? <AddSkill terms = {terms} setTerms = {setTerms} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {2} attributes = {attributes}/> : null}
 
             </div>
 

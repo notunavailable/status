@@ -7,7 +7,7 @@ const AttributesList = ({ attributes }) => {
         if (i % 2 == 0) {
             let pairedAttributes = [attribute, attributes[i + 1]]
             return (
-                <div>
+                <div key = {i}>
                     <AttributesRow attributes={pairedAttributes} />
                 </div>
             );

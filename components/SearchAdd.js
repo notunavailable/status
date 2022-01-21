@@ -21,7 +21,7 @@ const SearchAdd = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter, isSear
         <div>
             <input
                 type="text"
-                placeholder={`search ${searchItem}`}
+                placeholder={isSearch ? `search ${searchItem}` : `add ${searchItem} name`}
                 className={styles.input}
                 value={terms[i]}
                 onChange={e => setTerms([...terms.slice(0, i), e.target.value, ...terms.slice(i + 1)])}
