@@ -32,8 +32,8 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
                     type="text"
                     placeholder="description"
                     className={styles.input}
-                    value={milestone.level}
-                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: e.target.value }, ...milestones.slice(i + 1)])}
+                    value={milestone.description}
+                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: milestone.level, milestone: e.target.value }, ...milestones.slice(i + 1)])}
                 />
             </div>
 
