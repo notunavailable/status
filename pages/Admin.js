@@ -35,14 +35,12 @@ const Admin = (/*{skills, attributes}*/) => {
     ];
 
     const attributes = [
-        { name: "drawing" },
-        { name: "painting" },
-        { name: "writing" },
-        { name: "reading" },
-        { name: "speed reading" },
-        { name: "poker" },
-        { name: "magic" },
-        { name: "running" }
+        { name: "strength" },
+        { name: "intelligence" },
+        { name: "athleticism" },
+        { name: "dexterity" },
+        { name: "wisdom" },
+        { name: "edurance" }
     ];
 
 

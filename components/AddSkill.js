@@ -10,30 +10,32 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
 
     const renderMilestoneSetter = milestones.map((milestone, i) => {
         return (
-            <div key={i} className={styles.milestoneSetter}>
-                <input
-                    type="text"
-                    placeholder="milestone name"
-                    className={styles.input}
-                    value={milestone.name}
-                    onChange={e => setMilestones([...milestones.slice(0, i), { name: e.target.value, level: milestone.level, description: milestone.description }, ...milestones.slice(i + 1)])}
-                />
-                <input
-                    type="text"
-                    placeholder="level"
-                    className={styles.input}
-                    value={milestone.level}
-                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: e.target.value, description: milestone.description }, ...milestones.slice(i + 1)])}
-                />
-                <div className = {styles.deleteMilestone} onClick = {() => {setMilestones([...milestones.slice(0, i), ...milestones.slice(i+1)])}}>
-                    <h2 className = {styles.text}>delete</h2>
+            <div key={i}>
+                <div className={styles.milestoneSetter}>
+                    <input
+                        type="text"
+                        placeholder="milestone name"
+                        className={styles.input}
+                        value={milestone.name}
+                        onChange={e => setMilestones([...milestones.slice(0, i), { name: e.target.value, level: milestone.level, description: milestone.description }, ...milestones.slice(i + 1)])}
+                    />
+                    <input
+                        type="text"
+                        placeholder="level"
+                        className={styles.input}
+                        value={milestone.level}
+                        onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: e.target.value, description: milestone.description }, ...milestones.slice(i + 1)])}
+                    />
+                    <div className={styles.deleteMilestone} onClick={() => { setMilestones([...milestones.slice(0, i), ...milestones.slice(i + 1)]) }}>
+                        <h2 className={styles.text}>delete</h2>
+                    </div>
                 </div>
                 <textarea
                     type="text"
                     placeholder="description"
                     className={styles.input}
-                    value={milestone.level}
-                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: e.target.value }, ...milestones.slice(i + 1)])}
+                    value={milestone.description}
+                    onChange={e => setMilestones([...milestones.slice(0, i), { name: milestone.name, level: milestone.level, description: e.target.value }, ...milestones.slice(i + 1)])}
                 />
             </div>
 
@@ -93,7 +95,7 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
             />
             {renderMilestoneSetter}
             <div className={styles.addMilestone} onClick={() => { setMilestones([...milestones, { name: "", level: 0 }]) }}>
-                <h2 className = {styles.text}>Add another milestone</h2>
+                <h2 className={styles.text}>Add another milestone</h2>
             </div>
             <div className={styles.affectedAttributesButton} onClick={() => { setDropdownIsDropped(!dropdownIsDropped) }}>
                 <h2 className={styles.text}>Select affected attributes</h2>
@@ -105,6 +107,9 @@ const AddSkill = ({ terms, setTerms, onEnter, setOnEnter, i, attributes }) => {
                 <div style={{ "display": "flex", "flexDirection": "column" }}>
                     {affectedAttributes != [] ? renderAffectedAttributes : null}
                 </div>
+            </div>
+            <div className={styles.submitButton}>
+                <h2 className={styles.text}>Submit</h2>
             </div>
         </div>
     );

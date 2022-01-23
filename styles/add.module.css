@@ -8,6 +8,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 70px;
+    margin-bottom: 50px;
 }
 
 .exit{
@@ -35,7 +36,7 @@
 .description {
     margin-left: 10px;
     margin-top: 10px;
-    width: 300px;
+    width: 316px;
     margin-right: 10px;
     max-width: 573px;
 }
@@ -128,4 +129,14 @@
 .milestoneSetter {
     display: flex;
     flex-direction: row;
+}
+
+.submitButton{
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
 }
