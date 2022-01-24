@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../styles/admin.module.css';
-import SearchAdd from '../components/SearchAdd';
+import SearchAdd from '../components/admin/SearchAdd';
 import SearchResults from '../components/SearchResults';
-import AddSkill from '../components/AddSkill';
+import AddSkill from '../components/admin/AddSkill';
 import { GET_ALL_SKILLS, GET_ALL_ATTRIBUTES, GET_ALL_LEVELS, CREATE_SKILL } from '../utils/api-defs';
 
 /*export async function getServerSideProps(context) {

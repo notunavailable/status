@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import styles from '../styles/search.module.css';
+import styles from '../../styles/form.module.css';
 
 const SearchAdd = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter, isSearch }) => {
 
@@ -22,7 +22,7 @@ const SearchAdd = ({ terms, setTerms, searchItem, i, onEnter, setOnEnter, isSear
             <input
                 type="text"
                 placeholder={isSearch ? `search ${searchItem}` : `add ${searchItem} name`}
-                className={styles.input}
+                className={`${styles.input} ${styles.textInput}`}
                 value={terms[i]}
                 onChange={e => setTerms([...terms.slice(0, i), e.target.value, ...terms.slice(i + 1)])}
                 onKeyPress={e => {
