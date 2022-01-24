@@ -31,6 +31,7 @@ connectDB();
 app.use('/api/v1/user', user);
 app.use('/api/v1/level', level);
 app.use('/api/v1/skill', skill);
+app.use('/api/v1/attribute', attribute)
 app.use('/api/v1/levelProgression', levelProgression)
 
 app.listen(port, () => console.log(`API Server listening on port ${port}`))

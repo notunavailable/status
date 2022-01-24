@@ -4,8 +4,8 @@ import styles from '../styles/status.module.css';
 const AttributesRow = ({ attributes }) => {
     const attributesBox = attributes.map((attribute, i) => {
         return (
-            <div key={i} className={styles.attributesContainer}>
-                <h2 className = {styles.attributeInfo}>{attribute.title}: {attribute.level}</h2>
+            <div key={i} className={`${styles.statusBox} ${styles.attributesContainer}`}>
+                <h2 className = {styles.text}>{attribute.title}: {attribute.level}</h2>
             </div>
         );
     })

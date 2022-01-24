@@ -1,0 +1,29 @@
+{
+    "email": "johndoe@gmail.com",
+    "admin": true,
+    "username": "john doe",
+    "password": "jjstatus",
+    "status": {
+        "name": "john doe",
+        "age": 27,
+        "level": "4394892gjwigjbuyoqbedf",
+        "attributes": [
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"}
+        ],
+        "skills": [
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"},
+            {"id": "qoeihadhkvn87nbj", "level": "4oiqjfvo"}
+        ]
+    }
+}

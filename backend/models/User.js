@@ -8,8 +8,9 @@ const User = new Schema({
     password: String,
     status: {
         name: String,
+        level: String,
         attributes: Array,
-        skills: Array,
+        skills: Array
     }
 })
 

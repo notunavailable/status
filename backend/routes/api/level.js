@@ -41,8 +41,6 @@ router.put('/edit/:id', async (req, res) => {
     User.findOneAndUpdate(query, {
         currentLevel: req.body.currentLevel,
         exp: req.body.exp,
-        attributeID: req.body.attributeID,
-        skillID: req.body.skillID
     }).then(level => {
         if (!level) {
             res.status(404).send({
