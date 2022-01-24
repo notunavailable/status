@@ -16,7 +16,7 @@ const StatusList = ({ items }) => {
         }
     })
     return (
-        <div className={styles.attributesColumn}>
+        <div className={styles.statusColumn}>
             {renderPairedItems}
         </div>
     );

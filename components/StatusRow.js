@@ -9,14 +9,15 @@ const StatusRow = ({ items }) => {
             var attrValue = item[key];
             valueArray.push(attrValue);
         }
+
         return (
-            <div key={i} className={`${styles.statusBox} ${styles.attributesContainer}`}>
+            <div key={i} className={`${styles.statusBox} ${styles.statusContainer}`}>
                 <h2 className = {styles.text}>{valueArray[0]}: {valueArray[1]}</h2>
             </div>
         );
     })
     return (
-        <div className = {styles.attributesRow}>
+        <div className = {styles.statusRow}>
             {pairedBoxes}
         </div>
     );

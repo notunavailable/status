@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/form.module.css';
+import styles from '../../styles/form.module.css';
 
 const TextInput = ({value, setValue, placeholder, ...args}) => {
 
