@@ -1,8 +1,8 @@
 [
-    {"title": "Strength", "level": 5},
-    {"title": "Dexterity", "level": 5},
-    {"title": "Intelligence", "level": 5},
-    {"title": "Wisdom", "level": 5},
-    {"title": "Athleticism", "level": 5},
-    {"title": "Strength", "level": 5}
+    {"name": "Strength", "level": 5},
+    {"name": "Dexterity", "level": 5},
+    {"name": "Intelligence", "level": 5},
+    {"name": "Wisdom", "level": 5},
+    {"name": "Athleticism", "level": 5},
+    {"name": "Strength", "level": 5}
 ]
