@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import skills from '../../data/skills.json';
 import styles from '../../styles/skills.module.css';
+import formStyles from '../../styles/form.module.css';
 import StopWatch from '../../components/StopWatch';
 import Link from 'next/link';
 import ToggleSwitch from '../../components/form/ToggleSwitch';
@@ -15,7 +16,9 @@ const SkillPage = () => {
 
     useEffect(() => {
         if (!isEnding) {
-            console.log((date.end - date.start)/1000 + "seconds")
+            console.log(Math.trunc((date.end - date.start) / 1000) + " seconds");
+            const EXP = Math.trunc((((date.end - date.start) / 1000)/60) / 5);
+            console.log(EXP + " EXP");
         }
     }, [date.end]);
 
@@ -25,7 +28,9 @@ const SkillPage = () => {
     return (
         <div className={styles.page}>
             <Link href="http://localhost:3000/Skills">
-                <h3 className={styles.button}>Back</h3>
+                <div className={`${formStyles.input} ${formStyles.button}`}>
+                    <h2 className={formStyles.text}>Back</h2>
+                </div>
             </Link>
             <h1 className={styles.title}>{skill.title}</h1>
             <div className={styles.skillStatus}>
@@ -36,6 +41,9 @@ const SkillPage = () => {
                 <div className={styles.descriptionContainer}>
                     <h2>{skill.description}</h2>
                 </div>
+            </div>
+            <div>
+                <h2 className={styles.title}>Track your activity:</h2>
             </div>
             <ToggleSwitch label="Track your activity" date={date} setDate={setDate} isEnding={isEnding} setIsEnding={setIsEnding} />
 

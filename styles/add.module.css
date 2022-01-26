@@ -1,5 +1,5 @@
 .popupBox {
-    background-color:rgb(255, 245, 190);
+    background-color: #e2f0e3;
     border: 1px solid rgba(0, 0, 0, 0.384);
     border-radius: 5px;
     min-height: 400px;
@@ -9,11 +9,20 @@
     margin-right: auto;
     margin-top: 70px;
     margin-bottom: 50px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+
 }
+
+.skillDescription{
+    max-width: 357px;
+}
+
 
 .firstRow {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .milestoneSetter {
@@ -22,5 +31,39 @@
 }
 
 .milestoneBox{
-    background-color: #e2eaf0;
+    background-color: #acb8ad;
+}
+
+.wisdom{
+    background-color: #6062c7;
+}
+
+.strength{
+    background-color: #c760c7;
+}
+
+.intelligence{
+    background-color: #c7af60;
+}   
+
+.dexterity{
+    background-color: #c76060;
+}
+
+.athleticism{
+    background-color: #60c7c7;
+}
+
+.endurance{
+    background-color: #60c793;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
 }

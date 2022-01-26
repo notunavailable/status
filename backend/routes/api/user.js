@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
 });
 
 //Get User
-router.get("/get/:email", async (req, res) => {
+router.get("/get/email:email", async (req, res) => {
     const user = await User.findOne({email: req.params.email});
     console.log(user);
     if (!user) {
@@ -34,7 +34,7 @@ router.get("/get/:email", async (req, res) => {
 });
 
 //Edit user by id
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/id:id', async (req, res) => {
     
     var query = {id: req.body.id};
 
@@ -55,7 +55,7 @@ router.put('/edit/:id', async (req, res) => {
 });
 
 //Delete User by id
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/id:id', async (req, res) => {
     
     var query = {id: req.body.id};
 

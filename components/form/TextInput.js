@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../styles/form.module.css';
 
-const TextInput = ({value, setValue, placeholder, ...args}) => {
+const TextInput = ({value, setValue, placeholder}) => {
 
     return(
         <input
@@ -9,7 +9,7 @@ const TextInput = ({value, setValue, placeholder, ...args}) => {
             type = "text"
             placeholder = {placeholder}
             value = {value}
-            onChange = {(e) => {setValue(e.target.value, ...args)}}
+            onChange = {(e) => {setValue(e.target.value)}}
         />
     );
 }

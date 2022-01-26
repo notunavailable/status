@@ -20,7 +20,7 @@ router.post("/create", async (req, res) => {
 });
 
 //Get User
-router.get("/get/:id", async (req, res) => {
+router.get("/get/id:id", async (req, res) => {
     const level = await Level.findOne({id: req.params.id});
     console.log(level);
     if (!level) {
@@ -34,7 +34,7 @@ router.get("/get/:id", async (req, res) => {
 });
 
 //Edit level by id
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/id:id', async (req, res) => {
     
     var query = {id: req.body.id};
 

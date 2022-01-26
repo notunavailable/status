@@ -5,7 +5,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 //create level
 router.post("/create", async (req, res) => {
-    const levelProgression = await LevelProgression.findOne({id: req.body.id});
+    const levelProgression = await LevelProgression.findOne({level: req.body.level});
 
     if (levelProgression) {
         return res.status(400).send({
@@ -14,18 +14,18 @@ router.post("/create", async (req, res) => {
     }
     else {
         const newLevelProgression = new LevelProgression(req.body)
-        newLevel.save().catch(err => console.log(err));
+        newLevelProgression.save().catch(err => console.log(err));
         return res.status(201).send(newLevelProgression);
     }
 });
 
-//Get User
-router.get("/get/:id", async (req, res) => {
-    const levelProgression = await LevelProgression.findOne({id: req.params.id});
+//Get level by level
+router.get("/get/level:level", async (req, res) => {
+    const levelProgression = await LevelProgression.findOne({level: req.params.level});
     console.log(levelProgression);
     if (!levelProgression) {
         res.status(400).send({
-            message: "You sent an invalid id."
+            message: "You sent an invalid level."
         })
     }
     else{
@@ -33,14 +33,24 @@ router.get("/get/:id", async (req, res) => {
     }
 });
 
+router.get("/get/all", async (req, res) => {
+    const levelProgression = await LevelProgression.find();
+
+    if (levelProgression.length == 0) {
+        return res.status(404).send({ message: 'No level progression found' })
+    } else {
+        return res.status(201).send(levelProgression);
+    }
+})
+
 //Edit level by id
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/level:level', async (req, res) => {
     
-    var query = {id: req.body.id};
+    var query = {level: req.body.level};
 
     LevelProgression.findOneAndUpdate(query, {
-        name: req.body.name,
-        nextEXP: req.body.nextEXP
+        level: req.body.level,
+        requiredEXP: req.body.requiredEXP
     }).then(levelProgression => {
         if (!levelProgression) {
             res.status(404).send({

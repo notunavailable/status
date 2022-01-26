@@ -6,18 +6,15 @@ const ToggleSwitch = ({ label, date, setDate, isEnding, setIsEnding }) => {
   const startDate = () => {
     setDate({start: Date.now(), end: date.end});
     setIsEnding(true);
-    console.log("start")
   }
 
   const endDate = () => {
     setDate({start: date.start, end: Date.now()});
     setIsEnding(false);
-    console.log("end")
   }
 
   return (
     <div className={styles.container}>
-      {label}{" "}
       <div className={styles.toggleSwitch}>
         <input type="checkbox" className={styles.checkbox}
                name={label} id={label} onClick = {() => {isEnding ? endDate() : startDate()}}/>

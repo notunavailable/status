@@ -20,7 +20,7 @@ router.post("/create", async (req, res) => {
 });
 
 //Get attribute by ID
-router.get("/get/:id", async (req, res) => {
+router.get("/get/id:id", async (req, res) => {
     const attribute = await Attribute.findOne({ id: req.params.id });
     console.log(attribute);
     if (!attribute) {
@@ -33,8 +33,23 @@ router.get("/get/:id", async (req, res) => {
     }
 });
 
+//Get attribute by name
+router.get("/get/name:name", async (req, res) => {
+    const attribute = await Attribute.findOne({ name: req.params.name });
+    console.log(attribute);
+    if (!attribute) {
+        res.status(400).send({
+            message: "You sent an invalid name."
+        })
+    }
+    else {
+        return res.status(200).send(attribute);
+    }
+});
+
+
 //Edit attribute by id
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/id:id', async (req, res) => {
 
     var query = { id: req.body.id };
 
@@ -55,7 +70,7 @@ router.put('/edit/:id', async (req, res) => {
 });
 
 //Delete Attribute by id
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/id:id', async (req, res) => {
 
     var query = { id: req.body.id };
 

@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const user = require('./routes/api/user');
 const level = require('./routes/api/level');
 const skill = require('./routes/api/skill');
-const attribute = require('./routes/api/attributes');
+const attribute = require('./routes/api/attribute');
 const levelProgression = require('./routes/api/levelProgression');
 
 const app = express();

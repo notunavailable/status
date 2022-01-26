@@ -20,7 +20,7 @@ router.post("/create", async (req, res) => {
 });
 
 //Get skill by ID
-router.get("/get/:id", async (req, res) => {
+router.get("/get/id:id", async (req, res) => {
     const skill = await Skill.findOne({ id: req.params.id });
     console.log(skill);
     if (!skill) {
@@ -46,7 +46,7 @@ router.get('/get/all', async (req, res) => {
 })
 
 //Edit skill by id
-router.put('/edit/:id', async (req, res) => {
+router.put('/edit/id:id', async (req, res) => {
 
     var query = { id: req.body.id };
 
@@ -68,7 +68,7 @@ router.put('/edit/:id', async (req, res) => {
 });
 
 //Delete skill by id
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/id:id', async (req, res) => {
 
     var query = { id: req.body.id };
 

@@ -7,6 +7,18 @@ import user from '../data/user.json';
 import level from '../data/level.json';
 import skills from '../data/skills.json';
 
+import {GET_ATTRIBUTES_NAME } from '../utils/apip-defs';
+
+export async function getServerSideProps(context) {
+    const res = await fetch(GET_ATTRIBUTES_NAME);
+    const attributes = await res.json();
+    return {
+        props: {
+            attributes
+        }
+    }
+};
+
 const Status = () => {
 
     /*var userData = [];

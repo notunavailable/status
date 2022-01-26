@@ -25,7 +25,6 @@
     width: fit-content;
     text-align: center;
     margin-left: 10px;
-
 }
 
 .button:hover{
@@ -85,7 +84,7 @@
     color: #fff;
   }
   .inner:after {
-    content: "NOT TRACKING...";
+    content: "NOT TRACKING";
     padding-right: 10px;
     background-color: #bbb;
     color: #fff;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../styles/admin.module.css';
 import SearchAdd from '../components/admin/SearchAdd';
 import SearchResults from '../components/SearchResults';
-import AddSkill from '../components/admin/AddSkill';
+import SkillPopup from '../components/admin/SkillPopup';
 import { GET_ALL_SKILLS, GET_ALL_ATTRIBUTES, GET_ALL_LEVELS, CREATE_SKILL } from '../utils/api-defs';
 
 /*export async function getServerSideProps(context) {
@@ -20,8 +20,8 @@ import { GET_ALL_SKILLS, GET_ALL_ATTRIBUTES, GET_ALL_LEVELS, CREATE_SKILL } from
 
 
 const Admin = (/*{skills, attributes}*/) => {
-    const [terms, setTerms] = useState(['', '', '', '']);
-    const [onEnter, setOnEnter] = useState([false, false, false, false])
+    const [terms, setTerms] = useState(['', '', '', '', '', '', '', '', '']);
+    const [onEnter, setOnEnter] = useState([false, false, false, false, false])
 
     const skills = [
         { name: "drawing" },
@@ -40,7 +40,7 @@ const Admin = (/*{skills, attributes}*/) => {
         { name: "athleticism" },
         { name: "dexterity" },
         { name: "wisdom" },
-        { name: "edurance" }
+        { name: "endurance" }
     ];
 
 
@@ -63,9 +63,9 @@ const Admin = (/*{skills, attributes}*/) => {
                 <div className={styles.controls}>
                     <div className={styles.search}>
                         <SearchAdd terms={terms} setTerms={setTerms} searchItem="skills" i={0} onEnter={onEnter} setOnEnter={setOnEnter} isSearch={true} />
-                        {onEnter[0] ? <SearchResults Alldata={skills} term={terms[0]} /> : null}
+                        {onEnter[0] ? <SearchResults Alldata={skills} term={terms[0]} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {4}/> : null}
                         <SearchAdd terms={terms} setTerms={setTerms} searchItem="attributes" i={1} onEnter={onEnter} setOnEnter={setOnEnter} isSearch={true} />
-                        {onEnter[1] ? <SearchResults Alldata={attributes} term={terms[1]} /> : null}
+                        {onEnter[1] ? <SearchResults Alldata={attributes} term={terms[1]} onEnter = {onEnter} setOnEnter = {setOnEnter} i = {5}/> : null}
                     </div>
                     <div className={styles.add}>
                         <SearchAdd terms={terms} setTerms={setTerms} searchItem="skill" i={2} onEnter={onEnter} setOnEnter={setOnEnter} isSearch={false} />
@@ -73,7 +73,8 @@ const Admin = (/*{skills, attributes}*/) => {
                         {onEnter[3] ? <Add terms={terms} setTerms={setTerms} onEnter={onEnter} setOnEnter={setOnEnter} i={3} /> : null}
                     </div>
                 </div>
-                {onEnter[2] ? <AddSkill terms={terms} setTerms={setTerms} onEnter={onEnter} setOnEnter={setOnEnter} i={2} attributes={attributes} /> : null}
+                {onEnter[2] ? <SkillPopup terms={terms} setTerms={setTerms} onEnter={onEnter} setOnEnter={setOnEnter} i={2} attributes={attributes} /> : null}
+                {onEnter[4] ? <SkillPopup terms={terms} setTerms={setTerms} onEnter={onEnter} setOnEnter={setOnEnter} i={4} attributes={attributes} /> : null}
 
             </div>
 
